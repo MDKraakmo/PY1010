@@ -1,15 +1,18 @@
-#programmet regner ut årlig kostnad for bensinbil og elbil, samt differansen mellom disse
+'''
+Beregning av årlig kostnad av Elbil og Bensinbil
+Marte Djupvik Kråkmo
+'''
 
 #variabler for regnestykket
-totalAntallKm = 10000
-forsikringElbil = 5000
-forsikringBensinbil = 7500
-trafikkforsikringsavgift = 8.38 * 365
-strømpris = 2
-drivstoffElbil = 0.2 * totalAntallKm * strømpris
-drivstoffBensinbil = 1 * totalAntallKm
-bomavgiftElbil = 0.1 * totalAntallKm
-bomavgiftBensinbil = 0.3 * totalAntallKm
+totalAntallKm = 10000 #[km]
+forsikringElbil = 5000 #[kr/år]
+forsikringBensinbil = 7500 #[kr/år]
+trafikkforsikringsavgift = 8.38 * 365 #[kr/år] fordi vi multipliserer med 365
+strømpris = 2 #[kr/kWh]
+drivstoffElbil = 0.2 * totalAntallKm * strømpris #[kr], beregning for totalkostnad av drifstoff for elbil
+drivstoffBensinbil = 1 * totalAntallKm #[kr], beregning for totalkostnad av drivstoff for bensinbil
+bomavgiftElbil = 0.1 * totalAntallKm #[kr], beregning for totalkostnad av bomavgift for elbil
+bomavgiftBensinbil = 0.3 * totalAntallKm #[kr], beregning for totalkostnad av bomavgift for bensinbil
 
 '''
 Regnestykket for årlig bruk av bensinbil.
@@ -27,8 +30,8 @@ Bruker '\n' slik at en ny setning representeres på en ny linje.
 '''
 
 if elbilKostnad < bensinbilKostnad:
-    print("Elbil er billigere enn bensinbil.\nÅrlig utgift på elbil er %.2f, mens på bensinbil er det %.2f.\nDifferansen i kostnad er %.2f" % (elbilKostnad, bensinbilKostnad, (bensinbilKostnad - elbilKostnad)))
+    print("Elbil er billigere enn bensinbil.\nÅrlig utgift på elbil er %.2f kr, mens på bensinbil er det %.2f kr.\nDifferansen i kostnad er %.2f kr" % (elbilKostnad, bensinbilKostnad, (bensinbilKostnad - elbilKostnad)))
 elif bensinbilKostnad < elbilKostnad:
-    print("Bensinbil er billigere enn elbil.\nÅrlig utgift på bensinbil er %.2f, mens på elbil er det %.2f.\nDifferansen i kostnad er %.2f" % (bensinbilKostnad, elbilKostnad, (elbilKostnad - bensinbilKostnad)))
+    print("Bensinbil er billigere enn elbil.\nÅrlig utgift på bensinbil er %.2f kr, mens på elbil er det %.2f kr.\nDifferansen i kostnad er %.2f kr" % (bensinbilKostnad, elbilKostnad, (elbilKostnad - bensinbilKostnad)))
 else:
-    print("Det er like dyrt, med en pris på %.2f" % (bensinbilKostnad)) #Dersom hverken if- eller elif-statementen er sanne printes dette. 
+    print("Det er like dyrt, med en pris på %.2f kr" % (bensinbilKostnad)) #Dersom hverken if- eller elif-statementen er sanne printes dette. 
